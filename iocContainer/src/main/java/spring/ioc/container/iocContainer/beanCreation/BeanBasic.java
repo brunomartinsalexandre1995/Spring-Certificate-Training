@@ -1,7 +1,7 @@
-package spring.ioc.container.iocContainer.beans;
+package spring.ioc.container.iocContainer.beanCreation;
 
 
-public class SimpleBean {
+public class BeanBasic {
 
     private int x;
 
@@ -11,7 +11,7 @@ public class SimpleBean {
 
     private int y;
 
-    public SimpleBean(int x, int y) {
+    public BeanBasic(int x, int y) {
         this.x = x;
         this.y = y;
     }

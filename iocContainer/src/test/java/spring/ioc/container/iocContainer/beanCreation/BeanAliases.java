@@ -7,10 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
-import spring.ioc.container.iocContainer.beans.BeanThatWillHaveAliases;
-import spring.ioc.container.iocContainer.beans.SimpleBean;
-import spring.ioc.container.iocContainer.beans.SimpleStereotypeClass;
-import spring.ioc.container.iocContainer.beans.SimpleStereotypeClassWithName;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -21,8 +17,8 @@ public class BeanAliases {
 
     @Test
     public void beanAliasesTest() {
-        BeanThatWillHaveAliases simpleBean1 = (BeanThatWillHaveAliases) context.getBean("alias1");
-        BeanThatWillHaveAliases simpleBean2 = (BeanThatWillHaveAliases) context.getBean("alias2");
+        BeanWillAliases simpleBean1 = (BeanWillAliases) context.getBean("alias1");
+        BeanWillAliases simpleBean2 = (BeanWillAliases) context.getBean("alias2");
 
 
         Assertions.assertNotNull(simpleBean1);
@@ -34,14 +30,14 @@ public class BeanAliases {
 
     @Test
     public void beanDefaultNameTest() {
-        SimpleStereotypeClass simpleBean1 = (SimpleStereotypeClass) context.getBean("simpleStereotypeClass");
+        BeanService simpleBean1 = (BeanService) context.getBean("beanService");
         Assertions.assertNotNull(simpleBean1);
 
     }
 
     @Test
     public void beanInsertedNameTest() {
-        SimpleStereotypeClassWithName simpleBean1 = (SimpleStereotypeClassWithName) context.getBean("SomeName");
+        BeanServiceWithName simpleBean1 = (BeanServiceWithName) context.getBean("SomeName");
         Assertions.assertNotNull(simpleBean1);
 
     }
